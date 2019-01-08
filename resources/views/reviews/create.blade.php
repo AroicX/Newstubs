@@ -30,6 +30,21 @@
                                         {{ Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Enter Your Name Here']) }}
                                     </div>
                                     <div class="form-group">
+                                        <label for="rating">Rating</label>
+                                        <input type="text" value="3" id="ratingme" name="ratingme"/><br>
+
+                                        <a href="#" class="btn btn-default">Selected Value</a>
+                                              <script>
+                                              $(function(){
+                                                 $('#ratingme').rating();
+                                                 
+                                                 $( "a" ).click(function(){
+                                                    alert($('#ratingme').val());
+                                                 });         
+                                              });
+                                              </script>
+                                    </div>
+                                    <div class="form-group">
                                         {{ Form::textarea('body', '', ['class' => 'form-control', 'placeholder' => 'Enter Your Review Here']) }}
                                     </div>
                                     {{ Form::submit('Leave A Review', ['class' => 'btn btn-primary btn-lg']) }}

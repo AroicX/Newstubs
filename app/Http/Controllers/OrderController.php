@@ -66,15 +66,10 @@ class OrderController extends Controller
         $style = $userId->css;
         $template = $getData->template;
         $name = $getData->template_name;
-        $pdf = PDF::loadView('pages.preview', 
-            ['template' => $getData->template,
-             'name' =>$getData->name,
-             'style' => $userId->css
-            ]
-            )->setPaper('a4', 'portrait');
+        $pdf = PDF::loadView('pages.preview',['template' => $getData->template,'name' =>$getData->template_name,'style' => $style])->setPaper('a4', 'portrait');
 
         $fileName = ($getData->template_name . '_stub');
-        return $pdf->stream($fileName . '.pdf');
+        return $pdf->download($fileName . '.pdf');
 
 
         //return view('pages.preview',compact('template' ,'name','style' ));

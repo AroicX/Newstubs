@@ -29,6 +29,7 @@ class ReviewsController extends Controller
         return view('reviews.index')->with('reviews', $reviews);
     }
 
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -49,6 +50,7 @@ class ReviewsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'ratingme' => 'required',
             'body' => 'required'
         ]);
 
@@ -56,6 +58,7 @@ class ReviewsController extends Controller
         $review = new Review;
         $review->name = $request->input('name');
         $review->body = $request->input('body');
+        $review->ratings = $request->input('ratingme');
         $review->user_id = auth()->user()->id;
         $review->save();
 
@@ -73,6 +76,8 @@ class ReviewsController extends Controller
         $review = Review::find($id);
         return view('reviews.show')->with('review', $review);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

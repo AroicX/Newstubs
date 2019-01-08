@@ -125,16 +125,17 @@ class BuildStubController extends Controller
     $template_qty = $request->stubs['header']['stubsAmount'] + 1;
     $template_total = $template_qty * 9;
     $code = $this->generatePin(6);
-
-
     $name = $request->template;
         //return $RqTpl;
-        $data = Template::where('template_name','complete')->first();
-        if ($data) {
+        //if ($request->stubs['stub']['1']['extended'] == 1) {
           return view('stubs.complete', compact('template_name','template_qty','template_total','code'));;           
-        }else{
-            return '';
-        }
+            
+       // }
+       
+
+        //$stub1 = $request->stubs['stub']['1']['extended'];
+        //$stub2 = $request->stubs['stub']['2']['extended'];
+        //$stub3 = $request->stubs['stub']['3']['extended'];
     }
 
    

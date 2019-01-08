@@ -15,6 +15,7 @@ class AddNameToReviews extends Migration
     {
         Schema::table('reviews', function($table){
             $table->string('name');
+            $table->string('ratings');
         });
     }
 

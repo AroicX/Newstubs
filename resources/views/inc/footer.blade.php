@@ -1,17 +1,30 @@
 <hr>
 <div class="container">
     <div class="row">
+    @foreach(\App\Review::all() as $reviews)
+    
 
+      
         <div class="col-md-4">
             <h3>REVIEWS WILL BE HERE</h3>
+            {{$reviews->name}}
+            <input type="text" value="{{$reviews->ratings}}" id="userRatings{{$reviews->ratings}}" name="ratingme" disabled="on" /><br>
+
+            
+                  <script>
+                   
+                  $(function(){
+                        $('[id^=userRatings]').each(function() {
+
+                            $(this).rating();
+                         });
+                  });
+                  </script>
         </div>
-        <div class="col-md-4">
-            <h3>REVIEWS WILL BE HERE</h3>
-        </div>
-        <div class="col-md-4">
-            <h3>REVIEWS WILL BE HERE</h3>
-        </div>
+
+    @endforeach
     </div>
+   
     <hr>
     <div class="container">
         <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5">
@@ -170,9 +183,7 @@ if(value!=jQuery('#User_password').val()) {
 }}],'errorCss':'error'});
 jQuery('#register_win').modal({'show':false});
 jQuery('#yw8_0 .alert').alert();
-jQuery('#1155 > input').rating({'readOnly':true});
-jQuery('#1154 > input').rating({'readOnly':true});
-jQuery('#1152 > input').rating({'readOnly':true});
+
 });
 /*]]>*/
 </script>

@@ -21,6 +21,7 @@ Route::get('/faq', 'PagesController@faq');
 Route::get('/company', 'PagesController@company');
 Route::get('/employee', 'PagesController@employee');
 Route::get('/reviews', 'PagesController@reviews');
+Route::get('/reviews/create', 'PagesController@create');
 Route::get('/', 'PagesController@index');
 // Route::get('/modern', 'PagesController@modern');
 // Route::get('/modern2', 'PagesController@modern2');

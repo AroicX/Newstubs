@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>{!!$name.'_Stub'!!}</title>
   
 
         <!-- Styles -->
@@ -130,13 +130,13 @@
           </script>
         <![endif]-->
         <script src="https://checkout.stripe.com/checkout.js"></script>
+        {!! $style !!}
 </head>
 <body id="app">
   <br>
   <br>
   <br>
   <br>
-{!!$style!!}
 
  <h2 class="text-capitalize">{!!$name!!}</h2>  
     {{-- <button id="cmd" class="btn btn-success">generate PDF</button> --}}
